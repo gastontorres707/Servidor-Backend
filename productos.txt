@@ -1,19 +1,19 @@
 [
     {
         "title":"Teclado A",
-        "price": 300.000,
+        "price": 3000,
         "thumbnail":"produA.png",
         "id":1
     },
     {
         "title":"Teclado B",
-        "price": 500.000,
+        "price": 5000,
         "thumbnail":"produB.png",
         "id":2
     },
     {
         "title":"Teclado C",
-        "price": 500.000,
+        "price": 5000,
         "thumbnail":"produC.png",
         "id":3
     }

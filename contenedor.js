@@ -1,34 +1,33 @@
 const {promises:fs}= require('fs');
 
-
 class Contenedor{
     constructor (ruta){
         this.ruta=ruta;
     }
 
-    async getAll(){
+    async getAll() {
         try {
             let products = await fs.readFile(this.ruta);
-            return products;
-        } catch (error) {
-            return[];
+            const auxArray = JSON.parse(products)
+            return auxArray
+        }
+        catch {
+            return null
         }
     }
 
     async getRandom(){
         try {
             let products = await this.getAll();
-            let productsJSON = JSON.parse(products)
-            let random= Math.floor(Math.random()*productsJSON.length)
-            return productsJSON[random]
-        } catch (error) {
-            return []
+            let random= Math.floor(Math.random()*products.length)
+            return products[random]
+        } catch {
+            return null
         }
     }
 
 }
 
 let products = new Contenedor('./productos.txt');
-
 
 module.exports= products;
